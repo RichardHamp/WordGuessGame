@@ -1,9 +1,11 @@
 /* Selecting random word, determins length, and converts to lettered array. Resulting variables = randomWord & wordSplit (word split into letters)*/
 var winCounter = 0
 
-function resetVariables() {
-  
-}
+document.addEventListener("keypress", function(event) {
+  if (event.keyCode == 65) {
+      alert ("hi.")
+  }
+})
 
     function getRandom10(max) {/*random decimal 0-1 */
         return Math.floor(Math.random() * Math.floor(max));
@@ -50,9 +52,9 @@ function resetVariables() {
 
     document.onkeyup = keyUpHandler; /*listens for keystrokes*/
 
-    var guesses = []; /*empty array filled by letters in randomWord*/
+    var guesses = ["guesses"]; /*empty array filled by letters in randomWord*/
 
-    var vanna = []; /*empty array filled by guesses that correspond with randomWord*/
+    var vanna = ["vanna"]; /*empty array filled by guesses that correspond with randomWord*/
 
 /*Captures keycode for key pushed. If valid, adds to variable "guesses". If not, alerts player.*/
     function keyUpHandler() {
@@ -86,7 +88,7 @@ function resetVariables() {
 
       /* Comparing guesses (var guesses) to words (var uniqueLetters)*/
       if (wordSplit.includes(String.fromCharCode(tGuess))&&(vanna.includes(String.fromCharCode(tGuess)))===false){
-        vanna.push(String.fromCharCode(tGuess));
+        vanna.push(String.fromCharCode(tGuess));h
    
         }
         console.log (uniqueLetters);
@@ -95,7 +97,6 @@ function resetVariables() {
           console.log ("You Win!"); 
           winCounter++
           console.log (winCounter);
-      
         } 
        
      }
