@@ -10,6 +10,8 @@ window.onload = function(){
       console.log (current);
   }
 
+  
+
     function getRandom10(max) {/*random decimal 0-1 */
         return Math.floor(Math.random() * Math.floor(max));
       }
@@ -61,7 +63,9 @@ console.log (wordSplit);
 
     document.onkeyup = letterSelect; /*listens for keystrokes*/
 
-    var guesses = []; /*empty array filled by letters in randomWord*/
+    var guesses = ["guess"]; /*empty array filled by letters in randomWord*/
+
+    console.log (guesses)
 
     var vanna = []; /*empty array filled by guesses that correspond with randomWord*/
 
@@ -84,6 +88,11 @@ console.log (wordSplit);
               &&(uniqueLetters.includes(String.fromCharCode(tGuess)))===false){/*selection must be a letter, not already guessed, and not in the answer*/
         guesses.push (String.fromCharCode(tGuess)); /*pushes letter from tGuess into "guesses" array*/
          console.log (guesses);
+         
+          document.getElementById("beam").style.visibility = "visible";
+          setTimeout(function(){ document.getElementById("beam").style.visibility = "hidden" }, 1000);
+          i=(guesses.length);
+          document.getElementById("cow"+[i]).style.visibility = "hidden"
           }
 
           if (((isInArray == true)&&(guesses.includes(String.fromCharCode(tGuess)))===false)

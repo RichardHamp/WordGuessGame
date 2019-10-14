@@ -10,9 +10,10 @@
     </head>
 <main>
    <h1 class="gameName">BOVINE ABDUCTION!!!</h1>
-       <img class=alien src="assets/images/saucer.png" alt="Flying Saucer">
+       <img id=alien src="assets/images/saucer.png" alt="Flying Saucer">
+       <img id="beam" src="assets/images/beam.png">
 
-   <img class="cow animated bounce infinite" class="animated bounce infinite" id=cow1 src="assets/images/happy.png" alt="Flying Saucer">
+   <img class=cow id=cow1 src="assets/images/happy.png" alt="Flying Saucer">
    <img class=cow id=cow2 src="assets/images/happy.png" alt="Flying Saucer">
    <img class=cow id=cow3 src="assets/images/happy.png" alt="Flying Saucer">
    <img class=cow id=cow4 src="assets/images/happy.png" alt="Flying Saucer">
@@ -31,50 +32,96 @@
   </section>
 
   
-  <img id="beam" src="assets/images/beam.png" style="width:100px">
-  <img class=beam id=beam src="assets/images/beam.png" alt="Abduction Beam">
-  <button onclick="document.getElementById('beam').src='assets/images/happy.png'">Turn off the light</button>
+  
 
    <div class="container">
     <div class="btn-toolbar">
         
       <div class="btn-group btn-group-lg" id=bgroup1>
-
            
-        <image class="ibtn" input type="image" src="assets/images/Alphabet/A.png" button id="65" style="width:75px" 
-        onclick="clicked(this.id);document.getElementById('65').src='assets/images/Alphabet/Ab.png'">
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/a.png" button id="65" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('65').src='assets/images/Alphabet/ab.png'">
+        
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/b.png" button id="66" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('66').src='assets/images/Alphabet/bb.png'">
 
-        <button class="btn btn-success" button id="66" onclick="clicked(this.id)">B</button>
-        <button class="btn btn-success" button id="67" onclick="clicked(this.id)">C</button>
-        <button class="btn btn-success" button id="68" onclick="clicked(this.id)">D</button>
-        <button class="btn btn-success" button id="69" onclick="clicked(this.id)">E</button>
-        <button class="btn btn-success" button id="70" onclick="clicked(this.id)">F</button>
-        <button class="btn btn-success" button id="71" onclick="clicked(this.id)">G</button>
-        <button class="btn btn-success" button id="72" onclick="clicked(this.id)">H</button>
-        <button class="btn btn-success" button id="73" onclick="clicked(this.id)">I</button>
-      <!-- </div> -->
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/c.png" button id="67" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('67').src='assets/images/Alphabet/cb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/d.png" button id="68" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('68').src='assets/images/Alphabet/db.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/e.png" button id="69" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('69').src='assets/images/Alphabet/eb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/f.png" button id="70" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('70').src='assets/images/Alphabet/fb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/g.png" button id="71" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('71').src='assets/images/Alphabet/gb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/h.png" button id="72" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('72').src='assets/images/Alphabet/hb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/i.png" button id="73" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('73').src='assets/images/Alphabet/ib.png'">
+
+      </div> 
       <br>
       <div class="btn-group btn-group-lg bgroup2">
-        <button class="btn btn-success" button id="74" onclick="clicked(this.id)">J</button>
-        <button class="btn btn-success" button id="75" onclick="clicked(this.id)">K</button>
-        <button class="btn btn-success" button id="76" onclick="clicked(this.id)">L</button>
-        <button class="btn btn-success" button id="77" onclick="clicked(this.id)">M</button>
-        <button class="btn btn-success" button id="78" onclick="clicked(this.id)">N</button>
-        <button class="btn btn-success" button id="79" onclick="clicked(this.id)">O</button>
-        <button class="btn btn-success" button id="80" onclick="clicked(this.id)">P</button>
-        <button class="btn btn-success" button id="81" onclick="clicked(this.id)">Q</button>
-        <button class="btn btn-success" button id="82" onclick="clicked(this.id)">R</button>
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/j.png" button id="74" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('74').src='assets/images/Alphabet/jb.png'"></button>
+        
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/k.png" button id="75" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('75').src='assets/images/Alphabet/kb.png'"></image>
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/l.png" button id="76" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('76').src='assets/images/Alphabet/lb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/m.png" button id="77" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('77').src='assets/images/Alphabet/mb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/n.png" button id="78" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('78').src='assets/images/Alphabet/nb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/o.png" button id="79" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('79').src='assets/images/Alphabet/ob.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/p.png" button id="80" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('80').src='assets/images/Alphabet/pb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/q.png" button id="81" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('81').src='assets/images/Alphabet/qb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/r.png" button id="82" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('82').src='assets/images/Alphabet/rb.png'">
       </div>
       <br>
         <div class="btn-group btn-group-lg bgroup3">
-        <button class="btn btn-success" button id="83" onclick="clicked(this.id)">S</button>
-        <button class="btn btn-success" button id="84" onclick="clicked(this.id)">T</button>
-        <button class="btn btn-success" button id="85" onclick="clicked(this.id)">U</button>
-        <button class="btn btn-success" button id="86" onclick="clicked(this.id)">V</button>
-        <button class="btn btn-success" button id="87" onclick="clicked(this.id)">W</button>
-        <button class="btn btn-success" button id="88" onclick="clicked(this.id)">X</button>
-        <button class="btn btn-success" button id="89" onclick="clicked(this.id)">Y</button>
-        <button class="btn btn-success" button id="90" onclick="clicked(this.id)">Z</button>
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/s.png" button id="83" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('83').src='assets/images/Alphabet/sb.png'"></button>
+        
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/t.png" button id="84" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('84').src='assets/images/Alphabet/tb.png'"></image>
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/u.png" button id="85" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('85').src='assets/images/Alphabet/ub.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/v.png" button id="86" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('86').src='assets/images/Alphabet/vb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/w.png" button id="87" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('87').src='assets/images/Alphabet/wb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/x.png" button id="88" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('88').src='assets/images/Alphabet/xb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/y.png" button id="89" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('89').src='assets/images/Alphabet/yb.png'">
+
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/z.png" button id="90" style="width:50px" 
+        onclick="clicked(this.id);document.getElementById('90').src='assets/images/Alphabet/zb.png'">
+
       </div>
     </div>
   </div>
