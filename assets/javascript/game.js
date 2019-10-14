@@ -100,16 +100,4 @@ document.addEventListener("keypress", function(event) {
         } 
        
      }
-
-    
-
-  
-
-    
-
-
-       
-
-
-
-
+    }

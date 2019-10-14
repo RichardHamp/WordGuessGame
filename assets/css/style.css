@@ -1,3 +1,4 @@
+
 html {
     height: 100%;
 }
@@ -6,4 +7,120 @@ body {
     background-image: url(../../assets/images/pastoral.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+.border-danger {
+    width: 100%;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    color: red;
+    border: 2px;
+    font-family:'Monotype Corsiva','Apple Chancery','ITC Zapf Chancery','URW Chancery L',cursive;
+    text-shadow: 5px 5px 5px yellow,
+             5px 4px 1px yellow,
+             4px 4px 5px yellow,
+             0px 0px 7px yellow;
+}
+
+.btn-toolbar {
+    position: absolute;
+    width:200px;
+    right: 25%;
+    bottom: 7%;
+}
+
+.alien {
+    position: absolute;
+    height: 25%;
+}
+
+.beam {
+    position: absolute;
+    height: 75%;
+    z-index: 2;
+    left: 2%;
+    visibility: hidden;
+}
+
+#cow1 {
+    height: 7%;
+    position: absolute;
+    bottom: 40%;
+    z-index: -1;
+}
+
+#cow2 {
+    height: 18%;
+    position: absolute;
+    bottom: 20%;
+    left: 4%;
+    z-index: 2;
+}
+
+#cow3 {
+    height: 18%;
+    position: absolute;
+    bottom: 22%;
+    left: 25%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: 2;
+}
+
+#cow4 {
+    height: 7%;
+    position: absolute;
+    bottom: 36%;
+    left: 5%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: 0;
+}
+
+#cow5 {
+    height: 9%;
+    position: absolute;
+    bottom: 34%;
+    left: 22%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: 0;
+}
+
+#cow6 {
+    height: 6%;
+    position: absolute;
+    bottom: 41%;
+    left: 28%;
+    z-index: -1;
+}
+
+#cow7 {
+    height: 18%;
+    position: absolute;
+    bottom: 12%;
+    left: 20%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: 3;
+}
+
+#cow8 {
+    height: 100px;
+    position: absolute;
+    bottom: 200px;
+    z-index: 1;
+}
+
+#cow9 {
+    height: 10%;
+    position: absolute;
+    bottom: 25%;
+    left: 1%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: 1;
 }
