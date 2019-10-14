@@ -1,11 +1,14 @@
 /* Selecting random word, determins length, and converts to lettered array. Resulting variables = randomWord & wordSplit (word split into letters)*/
 var winCounter = 0
 
-document.addEventListener("keypress", function(event) {
-  if (event.keyCode == 65) {
-      alert ("hi.")
+window.onload = function(){
+  document.getElementById('output').innerHTML = answerArray;
+};
+
+  function clicked(clicked_id){
+      current=(clicked_id);
+      console.log (current);
   }
-})
 
     function getRandom10(max) {/*random decimal 0-1 */
         return Math.floor(Math.random() * Math.floor(max));
@@ -28,6 +31,7 @@ document.addEventListener("keypress", function(event) {
     /*console.log (wLength); /*test line*/
 
     var wordSplit = [] /*empty array filled by letters in randomWord*/
+console.log (wordSplit);
 
     for (numPos=0; numPos<wLength; numPos++) {/*converts randomWord into array of letters*/
       wordSplit.push(randomWord[numPos]);
@@ -42,24 +46,37 @@ document.addEventListener("keypress", function(event) {
     
     console.log(uniqueLetters.length)/*test line*/
 
-    // var wordSplitUniques = wordSplit.filter(wordSplit[] => word.length > 6);
+    var answerArray = [];
+      for (var i = 0; i < randomWord.length; i++) {
+        answerArray[i] = "_";
+      }
+    var remainingLetters = randomWord.length;
+    console.log (answerArray);
 
 /* Capturing guesses. Logs in array "guesses" as keyCodes. */
  
     var letterArray = Array.from(new Array(26), (x,i) => i + 65); /*gets all numbers correlating to letter keycodes and names the variables letterArray */
 
-    /*console.log (letterArray); test line*/
+    console.log (letterArray); //test line
 
-    document.onkeyup = keyUpHandler; /*listens for keystrokes*/
+    document.onkeyup = letterSelect; /*listens for keystrokes*/
 
-    var guesses = ["guesses"]; /*empty array filled by letters in randomWord*/
+    var guesses = []; /*empty array filled by letters in randomWord*/
 
-    var vanna = ["vanna"]; /*empty array filled by guesses that correspond with randomWord*/
+    var vanna = []; /*empty array filled by guesses that correspond with randomWord*/
+
+    function clicked(clicked_id){//pulls id from button and converts string to number before running letterSelect.
+      integer = parseInt(clicked_id, 10);
+      console.log (integer);
+      letterSelect();
+     }
 
 /*Captures keycode for key pushed. If valid, adds to variable "guesses". If not, alerts player.*/
-    function keyUpHandler() {
-      tGuess = (event.keyCode), 
-      /*console.log (tGuess),/*test line*/
+    function letterSelect() {
+      tGuess = (event.keyCode)||(integer), 
+      console.log (tGuess),//test line
+      guess = String.fromCharCode(tGuess);//converting keyCode to string var "guess"
+      console.log (guess);
       isInArray = letterArray.includes(tGuess); /*checks that tGuess is a letter (in letterArray)*/
       /*console.log (isInArray);test line*/
         
@@ -94,10 +111,20 @@ document.addEventListener("keypress", function(event) {
         console.log (uniqueLetters);
         console.log (vanna);
         if (uniqueLetters.length===vanna.length) {/*comparing lengths of two arrays--no need to check specific characters*/
-          console.log ("You Win!"); 
+        alert ("You Win!"); 
           winCounter++
           console.log (winCounter);
         } 
-       
+        for (var j = 0; j < randomWord.length; j++) {
+          if (randomWord[j] === guess) {
+           answerArray[j] = guess;
+          remainingLetters--;
+           }
+        console.log (answerArray);
+        
+          }
+          
+  document.getElementById('output').innerHTML = answerArray;
+
      }
-    }
+    

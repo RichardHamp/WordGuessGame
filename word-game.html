@@ -3,18 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Word Game</title>
-        <link rel = "stylesheet" href= "assets/css/style.css">
+      
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script type ="text/javascript" src = "assets/javascript/game.js"></script>
+        <link rel = "stylesheet" href= "assets/css/style.css">
     </head>
 <main>
-   <h1>BOVINE ABDUCTION!!!</h1>
+   <h1 class="gameName">BOVINE ABDUCTION!!!</h1>
+       <img class=alien src="assets/images/saucer.png" alt="Flying Saucer">
 
-   <img class=alien src="assets/images/saucer.png" alt="Flying Saucer">
-   <img class=beam id=beam src="assets/images/beam.png" alt="Abduction Beam">
-
-
-   <img class=cow id=cow1 src="assets/images/happy.png" alt="Flying Saucer">
+   <img class="cow animated bounce infinite" class="animated bounce infinite" id=cow1 src="assets/images/happy.png" alt="Flying Saucer">
    <img class=cow id=cow2 src="assets/images/happy.png" alt="Flying Saucer">
    <img class=cow id=cow3 src="assets/images/happy.png" alt="Flying Saucer">
    <img class=cow id=cow4 src="assets/images/happy.png" alt="Flying Saucer">
@@ -24,48 +22,59 @@
    <img class=cow id=cow8 src="assets/images/happy.png" alt="Flying Saucer">
    <img class=cow id=cow9 src="assets/images/happy.png" alt="Flying Saucer">
 
-   
+  <section class="text-center answerBar">
+    <div class="container">
+      <p class="lead text-muted">Clue</p>
+      <h1 id="output"></h1>
+      
+    </div>
+  </section>
+
+  
+  <img id="beam" src="assets/images/beam.png" style="width:100px">
+  <img class=beam id=beam src="assets/images/beam.png" alt="Abduction Beam">
+  <button onclick="document.getElementById('beam').src='assets/images/happy.png'">Turn off the light</button>
+
    <div class="container">
     <div class="btn-toolbar">
         
       <div class="btn-group btn-group-lg" id=bgroup1>
-          <span class="border border-danger rounded-lg">
-        <button class="btn btn-success">A</button>
-      </span>
-      <span class="border border-danger rounded-lg">
-        <button class="btn btn-success">B</button>
-      </span>
-        <button class="btn btn-success">C</button>
-        <button class="btn btn-success">D</button>
-        <button class="btn btn-success">E</button>
-        <button class="btn btn-success">F</button>
-        <button class="btn btn-success">G</button>
-        <button class="btn btn-success">H</button>
-        <button class="btn btn-success">I</button>
-      </div>
-    
+
+           
+        <image class="ibtn" input type="image" src="assets/images/Alphabet/A.png" button id="65" style="width:75px" 
+        onclick="clicked(this.id);document.getElementById('65').src='assets/images/Alphabet/Ab.png'">
+
+        <button class="btn btn-success" button id="66" onclick="clicked(this.id)">B</button>
+        <button class="btn btn-success" button id="67" onclick="clicked(this.id)">C</button>
+        <button class="btn btn-success" button id="68" onclick="clicked(this.id)">D</button>
+        <button class="btn btn-success" button id="69" onclick="clicked(this.id)">E</button>
+        <button class="btn btn-success" button id="70" onclick="clicked(this.id)">F</button>
+        <button class="btn btn-success" button id="71" onclick="clicked(this.id)">G</button>
+        <button class="btn btn-success" button id="72" onclick="clicked(this.id)">H</button>
+        <button class="btn btn-success" button id="73" onclick="clicked(this.id)">I</button>
+      <!-- </div> -->
       <br>
       <div class="btn-group btn-group-lg bgroup2">
-        <button class="btn btn-success">J</button>
-        <button class="btn btn-success">K</button>
-        <button class="btn btn-success">L</button>
-        <button class="btn btn-success">M</button>
-        <button class="btn btn-success">N</button>
-        <button class="btn btn-success">O</button>
-        <button class="btn btn-success">P</button>
-        <button class="btn btn-success">Q</button>
-        <button class="btn btn-success">R</button>
+        <button class="btn btn-success" button id="74" onclick="clicked(this.id)">J</button>
+        <button class="btn btn-success" button id="75" onclick="clicked(this.id)">K</button>
+        <button class="btn btn-success" button id="76" onclick="clicked(this.id)">L</button>
+        <button class="btn btn-success" button id="77" onclick="clicked(this.id)">M</button>
+        <button class="btn btn-success" button id="78" onclick="clicked(this.id)">N</button>
+        <button class="btn btn-success" button id="79" onclick="clicked(this.id)">O</button>
+        <button class="btn btn-success" button id="80" onclick="clicked(this.id)">P</button>
+        <button class="btn btn-success" button id="81" onclick="clicked(this.id)">Q</button>
+        <button class="btn btn-success" button id="82" onclick="clicked(this.id)">R</button>
       </div>
       <br>
         <div class="btn-group btn-group-lg bgroup3">
-        <button class="btn btn-success">S</button>
-        <button class="btn btn-success">T</button>
-        <button class="btn btn-success">U</button>
-        <button class="btn btn-success">V</button>
-        <button class="btn btn-success">W</button>
-        <button class="btn btn-success">X</button>
-        <button class="btn btn-success">Y</button>
-        <button class="btn btn-success">Z</button>
+        <button class="btn btn-success" button id="83" onclick="clicked(this.id)">S</button>
+        <button class="btn btn-success" button id="84" onclick="clicked(this.id)">T</button>
+        <button class="btn btn-success" button id="85" onclick="clicked(this.id)">U</button>
+        <button class="btn btn-success" button id="86" onclick="clicked(this.id)">V</button>
+        <button class="btn btn-success" button id="87" onclick="clicked(this.id)">W</button>
+        <button class="btn btn-success" button id="88" onclick="clicked(this.id)">X</button>
+        <button class="btn btn-success" button id="89" onclick="clicked(this.id)">Y</button>
+        <button class="btn btn-success" button id="90" onclick="clicked(this.id)">Z</button>
       </div>
     </div>
   </div>

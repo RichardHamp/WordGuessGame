@@ -1,3 +1,8 @@
+.ibtn {
+    z-index: 5;
+    background-image: url(assets/images/Alphabet.Ab.png);
+}
+
 
 html {
     height: 100%;
@@ -13,7 +18,7 @@ body {
     width: 100%;
 }
 
-h1 {
+.gameName {
     position: relative;
     text-align: center;
     color: red;
