@@ -2,15 +2,17 @@
 
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var words = ["bob", "rick", "jo", "vicki", "katie", "Felipe", "Sophia", "Linda", "Sebastian", "Albert Einstein"];/*words needed to guess for game*/
+var randomWord =[];
+var letter=[];
 
-//Populates initial images
 
+//Loading initial images
 window.onload = function(){
   var j=(0)
-  for (i = 65; i < 91; i++) {document.getElementById('bgroup').innerHTML += 
+  for (i = 0; i < 26; i++) {document.getElementById('bgroup').innerHTML += 
     '<img class="ibtn" input="" type="image" src="assets/images/Alphabet/'+alphabet[j]+
-    '.png" button="" id="'+i+'" style="width:50px" onclick="clicked(this.id);document.getElementById("'
-    +i+'").src="assets/images/Alphabet/'+alphabet[j]+'b.png"">';
+    '.png" button=""id='+alphabet[i]+' onclick="clicked(this.id)"></image>';
+    //document.getElementById("'+i+'").src="assets/images/Alphabet/'+alphabet[j]+'b.png"">';
   j++;
   }
   for (i = 1; i < 10; i++) {document.getElementById('cows').innerHTML += 
@@ -30,60 +32,80 @@ function initialize() {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-    var randomWord = ((words[getRandom10(10)]).toUpperCase());
+  var randomWord = ((words[getRandom10(10)]).toUpperCase());
     console.log (randomWord); //random word
-
+  }
   for (i=0; i<randomWord.length; i++) //populates spaces for letters
-  {document.getElementById('answerBar').innerHTML +='<img id=space src="assets/images/space.png">'}
+  {document.getElementById('answerBar').innerHTML +='<img id=space src="assets/images/space.png">'
   document.getElementById("init").style.visibility = "hidden"//hides button
-  
 }
 
+//Captures input from click or push and stores in var "letter"
 
-//
+  function clicked(clicked_id){
+  j=(clicked_id);
+  letter=(j.toUpperCase());
+  console.log(letter);
+  }
+
+  document.onkeypress = function (event) {
+  event = event || window.event;
+  i = event.keyCode || event.which;
+  j = String.fromCharCode(i);
+  letter=(j.toUpperCase());
+  console.log(letter);
+  
+  //would like to make this new function called by either click or press
+  if (randomWord.indexOf(letter)>-1)
+  {console.log(randomWord.indexOf)
+}
+  else {
+    console.log (console.log(randomWord.indexOf));
+  }
+}
+  // if (code.indexOf(randomWord).includes(letter)) {
+  //   console.log("yup");}
+  //    else {
+  //     console.log("nope");
+  //   }
+  //  }
+
+
+  
+ 
+ 
+
+//  if (randomWord.includes(letter)===true) {
+//   console.log("yup");}
+//   else {
+//     console.log("nope");
+//   }
+//Checks var "letter" against var "randomWord"
+ 
 
 
 
-//Shows empty spaces for letters in var = randomWord
+//  tGuess = (event.keyCode)||(integer),   
+//  console.log (tGuess),
+//  guess = String.fromCharCode(tGuess);
+//   console.log (guess);
+//  isInArray = letterArray.includes(tGuess); 
+
+
+//Populates initial images
+
   
 // function aBar() {
 //   for (var i; i<randomWord.length-1; i++) {document.getElementById('answerBar').innerHTML += "_";}}
-
-
-
 
 // var answerArray = [];
 // for (var i = 0; i < randomWord.length; i++) {
 //   answerArray[i] = "_";
 // }
- 
-// console.log (answerArray)
-
-
-
 
 //   function clicked(clicked_id){
 //       current=(clicked_id);
-//       console.log (current);
 //   }
-
-  
-
-
-
-   
-    /*console.log (random10); test line*/
-
-    
-
-   
-   
-
-    // console.log (randomWord.toUpperCase());
-
-  
-
-    /*console.log (wLength); /*test line*/
 
     //var wordSplit = [] empty array filled by letters in randomWord
 //console.log (wordSplit);
@@ -92,14 +114,11 @@ function initialize() {
 //       wordSplit.push(randomWord[numPos]);
 //     }
 
-//     console.log (wordSplit);/*test line*/
-
 //     const unique = (value, index, self) => {/*creates a list of unique letters in the word called "uniqueLetters" for easy comparison*/
 //       return self.indexOf(value) === index
 //     }
 //     const uniqueLetters = wordSplit.filter(unique)
     
-//     console.log(uniqueLetters.length)/*test line*/
 
 //     var answerArray = [];
 //       for (var i = 0; i < randomWord.length; i++) {
@@ -129,7 +148,8 @@ function initialize() {
 //      }
 
 // /*Captures keycode for key pushed. If valid, adds to variable "guesses". If not, alerts player.*/
-//     function letterSelect() {
+//     document.onkeyup = letterSelect
+// function letterSelect() {
 //       tGuess = (event.keyCode)||(integer), 
 //       console.log (tGuess),//test line
 //       guess = String.fromCharCode(tGuess);//converting keyCode to string var "guess"
