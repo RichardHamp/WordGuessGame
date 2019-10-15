@@ -1,5 +1,7 @@
 
-
+h2 {
+    color:blue;
+}
 html {
     height: 100%;
 }
@@ -10,8 +12,18 @@ body {
     background-size: 100% 100%;
 }
 
+#space {
+    height:20px;
+    width: 60px;
+}
+
 .border-danger {
     width: 100%;
+}
+
+#score {
+    position:relative;
+    left:25%;
 }
 
 .gameName {
@@ -45,6 +57,7 @@ body {
 #alien {
     position: absolute;
     height: 25%;
+    visibility: hidden;
 }
 
 
@@ -54,6 +67,7 @@ body {
     position: absolute;
     bottom: 40%;
     z-index: -1;
+    visibility: hidden;
 }
 
 #cow2 {
@@ -62,6 +76,7 @@ body {
     bottom: 20%;
     left: 4%;
     z-index: 2;
+    visibility: hidden;
 }
 
 #cow3 {
@@ -72,6 +87,7 @@ body {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 2;
+    visibility: hidden;
 }
 
 #cow4 {
@@ -82,6 +98,7 @@ body {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 0;
+    visibility: hidden;
 }
 
 #cow5 {
@@ -92,6 +109,7 @@ body {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 0;
+    visibility: hidden;
 }
 
 #cow6 {
@@ -100,6 +118,7 @@ body {
     bottom: 41%;
     left: 28%;
     z-index: -1;
+    visibility: hidden;
 }
 
 #cow7 {
@@ -110,6 +129,7 @@ body {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 3;
+    visibility: hidden;
 }
 
 #cow8 {
@@ -117,6 +137,7 @@ body {
     position: absolute;
     bottom: 200px;
     z-index: 1;
+    visibility: hidden;
 }
 
 #cow9 {
@@ -127,4 +148,6 @@ body {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 1;
+    visibility: hidden;
 }
+
