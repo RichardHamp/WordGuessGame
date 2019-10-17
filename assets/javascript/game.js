@@ -10,10 +10,12 @@ var letter=[];
 window.onload = function(){
   var j=(0)
   for (i = 0; i < 26; i++) {document.getElementById('bgroup').innerHTML += 
-    '<img class="ibtn" input="" type="image" src="assets/images/Alphabet/'+alphabet[j]+
-    '.png" button=""id='+alphabet[i]+' onclick="clicked(this.id)"></image>';
-    //document.getElementById("'+i+'").src="assets/images/Alphabet/'+alphabet[j]+'b.png"">';
+   // '<img class="ibtn" input="" type="image" src="assets/images/Alphabet/'+alphabet[j]+'.png" button id="'+alphabet[i]+'" onclick="clicked(this.id)" document.getElementById("'+i+'").src="assets/images/Alphabet/'+alphabet[j]+'b.png">'
+    '<img class="ibtn" input="" type="image" src="assets/images/Alphabet/'+alphabet[j]+'.png" button id="'+alphabet[i]+'"onclick="document.getElementById("'+i+'").src="assets/images/space.png">'
+                                                                                                                        //onclick="document.getElementById('myImage').src='pic_bulboff.gif"'>
+    
   j++;
+ console.log()
   }
   for (i = 1; i < 10; i++) {document.getElementById('cows').innerHTML += 
     '<img class="cow" id="cow'+i+'" src="assets/images/happy.png" alt="Flying Saucer">';
@@ -34,6 +36,7 @@ function initialize() {
 
   var randomWord = ((words[getRandom10(10)]).toUpperCase());
     document.getElementById('ph').innerHTML += (randomWord);//random word
+    console.log (ph);
 
   for (i=0; i<randomWord.length; i++) //populates spaces for letters
   {document.getElementById('answerBar').innerHTML +='<img id=space src="assets/images/space.png">'
@@ -51,13 +54,23 @@ function initialize() {
   function clicked(clicked_id){
     letter = (clicked_id.toUpperCase());
     document.getElementById('let').innerHTML += (letter);
+
+// //click function calling for image change and function "clicked"
+// function clickchange (clicked_id){
+//       clicked();
+//       Changeimg();
+// }
+
+// function changeimg() {
+//   document.getElementById(clicked_id).src='document.getElementById'+i+'"src="assets/images/Alphabet/'+alphabet[j]+'b.png"">;</div>"'
+//   }
     
   //need to bring "clicked" into this.
   guesses = [];
   ins = (document.getElementById('ph').innerHTML);
   if (ins.includes(letter)===true) {
-    guesses.push (letter);}
-
+    guesses.push (letter);
+    console.log ("yup")}
   else {
     console.log ("nope");
   }

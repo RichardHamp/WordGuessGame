@@ -59,28 +59,18 @@ height:60px;
 width:60px;
 }
 
-h2 {
-    color:blue;
+#ph {
+    visibility: hidden;
 }
-
 
 #space {
     height:20px;
     width: 60px;
 }
 
-.border-danger {
-    width: 100%;
+#pac {
+ 
 }
-
-#score {
-    position:relative;
-    left:25%;
-}
-
-
-
-
 
 #beam {
     position: absolute;
@@ -96,8 +86,6 @@ h2 {
     height: 25%;
     visibility: hidden;
 }
-
-
 
 #cow1 {
     height: 7%;
