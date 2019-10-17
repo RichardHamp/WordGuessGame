@@ -39,6 +39,7 @@ body {
     transition-duration: 0.4s;
     text-shadow: 5px 5px 5px yellow,
              0px 0px 7px yellow;
+    
 }
     
 #init:hover {
@@ -59,12 +60,27 @@ height:60px;
 width:60px;
 }
 
-#ph {
-    visibility: hidden;
+h4 {
+    font-family:'Monotype Corsiva','Apple Chancery','ITC Zapf Chancery','URW Chancery L',cursive;
+    float:right;
+    background:white;
+    border-radius: 50px;
+    padding: 10px;
+    border-style: ridge;
+    border-width: 10px;
+    border-color: yellow;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    text-shadow: 5px 5px 5px yellow,
+             0px 0px 7px yellow;
 }
 
-#space {
-    height:20px;
+#ph {
+  
+}
+
+.space {
+    height:60px;
     width: 60px;
 }
 
@@ -84,7 +100,8 @@ width:60px;
 #alien {
     position: absolute;
     height: 25%;
-    visibility: hidden;
+    top:10%;
+
 }
 
 #cow1 {
