@@ -9,28 +9,33 @@ function getRandom10(max) {//random number 1-10
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+function keyed(a) {
+  letter = (a);
+  console.log (letter);
+}
+
 function win () {
-  console.log (win)
-  
-  alert ("Hurray")
+  document.getElementById("win").innerHTML += 
+  '<img class="responsive" id="win" src="assets/images/win.png" alt="Win">'
   document.getElementById("init").style.visibility = "visible"//hides button
 }
 
 function lose () {
-  alert ("You Fail")
+  document.getElementById("lose").innerHTML += 
+  '<img class="responsive" id="lose" src="assets/images/lose.png" alt="Lose">'
   document.getElementById("init").style.visibility = "visible"//hides button
 }
 
-function answers() {document.getElementById('answerBar').innerHTML +='<img id=space'+[i]+' class=space src="assets/images/space.png">'
+function answers() {document.getElementById('answerBar').innerHTML +='<img id=space'+[i]+' class="space responsive" src="assets/images/space.png">'
 }
 
 window.onload = function(){
-  var j=(0)
+  
   //loading alphabet
-  for (i = 0; i < 26; i++) {document.getElementById('bgroup').innerHTML += 
-   '<img class="ibtn" input="" type="image" src="assets/images/Alphabet/'+alphabet[i]+'.png" button id="'+alphabet[i]+'" onclick="clicked(this.id)" document.getElementById("'+i+'").src="assets/images/Alphabet/'+alphabet[i]+'b.png">'
+  
+  //  onclick="clicked(this.id)" document.getElementById("'+i+'").src="assets/images/Alphabet/'+alphabet[i]+'b.png">'
     //'<img class="ibtn" input="" type="image" src="assets/images/Alphabet/'+alphabet[j]+'.png" button id="'+alphabet[i]+'"onclick="document.getElementById("'+i+'").src="assets/images/space.png">'
-  }
+  
   // //loading cows
   // for (i = 1; i < 10; i++) {document.getElementById('cows').innerHTML += 
   //   '<img class="cow" id="cow'+i+'" src="assets/images/happy.png" alt="cows">';
@@ -38,8 +43,8 @@ window.onload = function(){
   //loading flying saucer and beam (hidden)
   document.getElementById('gameName').innerHTML +=
     
-    '<img id="beam" src="assets/images/beam.png">'+
-    '<img id=alien src="assets/images/saucer.png" alt="Flying Saucer">'
+    '<img id="beam" class="responsive" src="assets/images/shipandbeam.png">'+
+    '<img id=alien class="responsive" src="assets/images/saucer.png" alt="Flying Saucer">'
 }
 
 //Initialize button
@@ -49,7 +54,7 @@ function initialize() {
   
   var cowsLeft=9;
 
-  document.getElementById('cows').innerHTML += '<img class="cows" input="">'
+  document.getElementById('cows').innerHTML += '<img class="cows responsive" input="">'
 
   for (i = 1; i < 10; i++) {document.getElementById('cows').innerHTML += 
     '<img class="cow" id="cow'+i+'" src="assets/images/happy.png" alt="cows">';
@@ -69,30 +74,39 @@ function initialize() {
    
   console.log (randomWord)
 
-  
-
- 
   //Captures input from click or push and stores in var "letter"
-   
+  for (i = 0; i < 26; i++) {document.getElementById('bgroup').innerHTML += 
+  '<img class="ibtn responsive" input=type="image" src="assets/images/Alphabet/'+alphabet[i]+'.png" button id="'+alphabet[i]+'" onclick=keyed('+alphabet[i]+')>'
+
   document.onkeypress = function (event) {
+    guesses=[]
+    letter = (String.fromCharCode(event.keyCode).toUpperCase());
+    ll = (String.fromCharCode(event.keyCode));
+    document.getElementById(ll).src='assets/images/Alphabet/'+[letter]+'b.png';
     
-  letter = (String.fromCharCode(event.keyCode).toUpperCase());
-  console.log(letter)  // document.getElementById('let').innerHTML += (letter);
-  if (randomWord.indexOf(letter) > -1) {
+    if (letter.indexOf(guesses)>0) {
+      alert("See the big X over the letter? That means you can't do it again.");
+      }
+      else {guesses.push (letter);
+        console.log (guesses);
+      }
+
+  if (randomWord.indexOf(letter) > -1){
+
+   
+
     for (j=0;j<randomWord.length;j++) {
       if (randomWord[j] == letter) {
-        console.log(j);
         document.getElementById('space'+[j]+'').src = 'assets/images/Alphabet/'+letter+'.png';
         lettersGuessed++;
-        console.log(lettersGuessed);
         if (lettersGuessed==randomWord.length) {
           win();
         }
       }
     }
   }
+  
   else {
-   
     document.getElementById("beam").style.visibility = "visible";
     setTimeout(function(){ document.getElementById("beam").style.visibility = "hidden" }, 1000);
     document.getElementById('cow'+[cowsLeft]).style.visibility = "hidden";}
@@ -100,12 +114,11 @@ function initialize() {
     if (cowsLeft<=0) {
       lose();
     }
-    
-    document.getElementById("gScore").innerHTML;
-    gScore.splice(0,1,"(cowsLeft)");
-    console.log (gScore);
   }
+  
+}
   }
+  
 
 
 

@@ -18,20 +18,20 @@
             </div>
         </div>
 
-        <div class="container text-center"><!--Initialize Button-->
+        <div class="container-fluid text-center"><!--Initialize Button-->
 
-            <button type="col-5 align-self-center text-justify" id=init onclick="initialize()">Save Da Mooers!</button>
+            <button type="col-5 align-self-center text-justify" class="responsive" id=init onclick="initialize()">Save Da Mooers!</button>
             
             <!-- <img class="ibtn" input="" type="image" src="assets/images/Alphabet/a.png" button id="an" onclick="document.getElementById(an).src='assets/images/Alphabet/b.png'"> -->
         </div>
 
-        <div class="btn-toolbar" id=bgroup></div><!--alphabet buttons-->
+        <div class="btn-toolbar container-fluid" class="responsive" id=bgroup></div><!--alphabet buttons-->
         
-        <div id=cows class=cows></div><!--Cow Images-->
+        <div id=cows class=cows class="responsive"></div><!--Cow Images-->
 
-        <div class="text-center" id=answerBar></div>
+        <div class="text-center responsive" id=answerBar></div>
 
-        <h4>Cows Saved From Space Probes: <span class="badge badge-secondary" id=score>0</span></h4>
+        <h4>Cows Saved From Space Probes: <span class="badge badge-secondary responsive" id=score>0</span></h4>
   
         
         <!-- <button class="button" input="" type="image" src="assets/images/Alphabet/'+alphabet[j]+'.png" button="buta" id="a" onclick="clickchange()">here< -->
@@ -48,6 +48,10 @@
     <div id=gameName></div>
 
     <div id=gScore></div>
+
+    <div id=win class=responsive></div>
+
+    <div id=lose class=responsive></div>
 
    
 </div>
