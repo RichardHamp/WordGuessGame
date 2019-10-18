@@ -1,24 +1,28 @@
 //Global Variables
-
-var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var randomWord =[];
 var letter=[];
 var lettersGuessed=0;
-var cowsLeft=3;
 
+var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 //Global Function
 function getRandom10(max) {//random number 1-10
   return Math.floor(Math.random() * Math.floor(max));
 }
 
 function win () {
+  console.log (win)
+  
   alert ("Hurray")
+  document.getElementById("init").style.visibility = "visible"//hides button
 }
 
 function lose () {
   alert ("You Fail")
+  document.getElementById("init").style.visibility = "visible"//hides button
 }
 
+function answers() {document.getElementById('answerBar').innerHTML +='<img id=space'+[i]+' class=space src="assets/images/space.png">'
+}
 
 window.onload = function(){
   var j=(0)
@@ -27,14 +31,15 @@ window.onload = function(){
    '<img class="ibtn" input="" type="image" src="assets/images/Alphabet/'+alphabet[i]+'.png" button id="'+alphabet[i]+'" onclick="clicked(this.id)" document.getElementById("'+i+'").src="assets/images/Alphabet/'+alphabet[i]+'b.png">'
     //'<img class="ibtn" input="" type="image" src="assets/images/Alphabet/'+alphabet[j]+'.png" button id="'+alphabet[i]+'"onclick="document.getElementById("'+i+'").src="assets/images/space.png">'
   }
-  //loading cows
-  for (i = 1; i < 10; i++) {document.getElementById('cows').innerHTML += 
-    '<img class="cow" id="cow'+i+'" src="assets/images/happy.png" alt="cows">';
-  }
+  // //loading cows
+  // for (i = 1; i < 10; i++) {document.getElementById('cows').innerHTML += 
+  //   '<img class="cow" id="cow'+i+'" src="assets/images/happy.png" alt="cows">';
+  // }
   //loading flying saucer and beam (hidden)
   document.getElementById('gameName').innerHTML +=
-    '<img id=alien src="assets/images/saucer.png" alt="Flying Saucer">'+
-    '<img id="beam" src="assets/images/beam.png">'
+    
+    '<img id="beam" src="assets/images/beam.png">'+
+    '<img id=alien src="assets/images/saucer.png" alt="Flying Saucer">'
 }
 
 //Initialize button
@@ -42,7 +47,15 @@ window.onload = function(){
 function initialize() { 
   var words = ["bob", "rick", "jo", "vicki", "katie", "Felipe", "Sophia", "Linda", "Sebastian", "Albert Einstein"];/*words needed to guess for game*/
   
-  document.getElementById('score').innerHTML +=" 0";//sets current global score to 0
+  var cowsLeft=9;
+
+  document.getElementById('cows').innerHTML += '<img class="cows" input="">'
+
+  for (i = 1; i < 10; i++) {document.getElementById('cows').innerHTML += 
+    '<img class="cow" id="cow'+i+'" src="assets/images/happy.png" alt="cows">';
+  }
+
+  document.getElementById('score').innerHTML +="0";//sets current global score to 0
   console.log (score)
   
   var randomWord = ((words[getRandom10(10)]).toUpperCase());
@@ -71,24 +84,26 @@ function initialize() {
         console.log(j);
         document.getElementById('space'+[j]+'').src = 'assets/images/Alphabet/'+letter+'.png';
         lettersGuessed++;
-        console.log(lettersGuessed)
+        console.log(lettersGuessed);
         if (lettersGuessed==randomWord.length) {
-          win()
-        
+          win();
         }
       }
     }
   }
   else {
-    cowsLeft --;
-    if (cowsLeft<=0) {
-      lose();
-      return;
-    }
+   
     document.getElementById("beam").style.visibility = "visible";
     setTimeout(function(){ document.getElementById("beam").style.visibility = "hidden" }, 1000);
     document.getElementById('cow'+[cowsLeft]).style.visibility = "hidden";}
-    console.log (cowsLeft);
+    cowsLeft --;
+    if (cowsLeft<=0) {
+      lose();
+    }
+    
+    document.getElementById("gScore").innerHTML;
+    gScore.splice(0,1,"(cowsLeft)");
+    console.log (gScore);
   }
   }
 
