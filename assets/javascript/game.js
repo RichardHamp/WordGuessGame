@@ -3,6 +3,7 @@ var randomWord =[];
 var letter=[];
 var lettersGuessed=0;
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var guesses =[]
 
 //Global Functions
 function getRandom10(max) {//random number 1-10
@@ -15,8 +16,8 @@ function clearing(elementID){//zeros out div
 
 function win () {
   document.getElementById("win").innerHTML += 
-  '<img class="responsive" id="win" src="assets/images/win.png" alt="Win">'
-  document.getElementById("init").style.visibility = "visible"//hides button
+  '<img class="responsive" id="win" src="assets/images/win.png" alt="Win">';
+  document.getElementById("init").style.visibility = "visible";//hides button
 }
 
 function lose () {
@@ -43,10 +44,11 @@ function initialize() {
   clearing ('lose');
   clearing ('bgroup');
   clearing ('answerBar');
-  lettersGuessed = 0;
-  var words = ["bob", "rick", "jo", "vicki", "katie", "Felipe", "Sophia", "Linda", "Sebastian", "Albert Einstein"];
+  var words = ["moo", "teleport", "chupacabra", "grazing", "mothership",];
   var cowsLeft=9;
-  var randomWord = ((words[getRandom10(10)]).toUpperCase());    
+  var randomWord = ((words[getRandom10(10)]).toUpperCase()); 
+  var guesses = [];
+  var lettersGuessed = 0;
 
   //Resetting Images
   for (i=0; i<randomWord.length; i++){ //populates spaces for letters
@@ -59,27 +61,19 @@ function initialize() {
   for (i = 1; i < 10; i++) {
     document.getElementById('cows').innerHTML += '<img class="cow" id="cow'+i+'" src="assets/images/happy.png" alt="cows">';
   }
-  
-  console.log (randomWord)
 
   //Captures input from key and stores in var "letter"
   for (i = 0; i < 26; i++) {document.getElementById('bgroup').innerHTML += 
     '<img class="ibtn responsive" input=type="image" src="assets/images/Alphabet/'+alphabet[i]+'.png" button id="'+alphabet[i]+'" onclick=keyed('+alphabet[i]+')>'
 
   document.onkeypress = function (event) {
-    guesses=[]
     letter = (String.fromCharCode(event.keyCode).toUpperCase());
     ll = (String.fromCharCode(event.keyCode));
     document.getElementById(ll).src='assets/images/Alphabet/'+[letter]+'b.png';
-    
-    if (letter.indexOf(guesses)>0) {
+    if (guesses.indexOf(letter)>-1) {
       alert("See the big X over the letter? That means you can't do it again.");
       }
       else {guesses.push (letter);
-        console.log (guesses);
-        console.log (lettersGuessed);
-        console.log (randomWord);
-      }
 
   if (randomWord.indexOf(letter) > -1){
     for (j=0;j<randomWord.length;j++) {
@@ -87,16 +81,21 @@ function initialize() {
         document.getElementById('space'+[j]+'').src = 'assets/images/Alphabet/'+letter+'.png';
         lettersGuessed++;
         if (lettersGuessed==randomWord.length) {
+          q = document.getElementById("score").innerHTML;
+          clearing("score");
+          r = Number(cowsLeft) + Number(q);
+          document.getElementById("score").innerHTML = (r)
           win();
         }
       }
     }
   }
-  
+
   else {
     document.getElementById("beam").style.visibility = "visible";
     setTimeout(function(){ document.getElementById("beam").style.visibility = "hidden" }, 1000);
-    document.getElementById('cow'+[cowsLeft]).style.visibility = "hidden";}
+    document.getElementById('cow'+[cowsLeft]).style.visibility = "hidden";
+
     cowsLeft --;
     if (cowsLeft<=0) {
       lose();
@@ -104,8 +103,8 @@ function initialize() {
   }
 }
 }
-  
-
+}
+}
 //   function answers() {document.getElementById('answerBar').innerHTML +='<img id=space'+[i]+' class="space responsive" src="assets/images/space.png">'
 // }
     
