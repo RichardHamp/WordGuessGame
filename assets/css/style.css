@@ -52,7 +52,6 @@ body {
     position: absolute;
     left:55%;
     bottom:0;
-   
 }
 
 .ibtn {
@@ -85,21 +84,14 @@ h4 {
 #lose {
     position: absolute;
     z-index: 5;
-    left:25%;
-    top:25%;
-}
-
-#ph {
-  
+    left:30%;
+    top:15%;
+    height: 75%;
 }
 
 .space {
     height:30%;
     width: 6%;
-}
-
-#pac {
- 
 }
 
 #beam {
@@ -122,7 +114,6 @@ h4 {
     position: absolute;
     bottom: 40%;
     z-index: -1;
-    
 }
 
 #cow2 {
@@ -131,7 +122,6 @@ h4 {
     bottom: 20%;
     left: 4%;
     z-index: 2;
-   
 }
 
 #cow3 {
@@ -142,7 +132,6 @@ h4 {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 2;
-    
 }
 
 #cow4 {
@@ -153,7 +142,6 @@ h4 {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 0;
-   
 }
 
 #cow5 {
@@ -164,7 +152,6 @@ h4 {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 0;
-
 }
 
 #cow6 {
@@ -173,7 +160,6 @@ h4 {
     bottom: 41%;
     left: 28%;
     z-index: -1;
-    
 }
 
 #cow7 {
@@ -184,7 +170,6 @@ h4 {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 3;
-   
 }
 
 #cow8 {
@@ -193,7 +178,6 @@ h4 {
     bottom: 38%;
     left: 18%;
     z-index: -1;
-    
 }
 
 #cow9 {
@@ -204,6 +188,5 @@ h4 {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 1;
-    
 }
 
