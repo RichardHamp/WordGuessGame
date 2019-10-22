@@ -68,7 +68,8 @@ function initialize() {
     '<img class="ibtn responsive" input=type="image" src="assets/images/Alphabet/' + alphabet[i] + '.png" button id="' + alphabet[i] + '" onclick=keyed(' + alphabet[i] + ')>'
 
     document.onkeypress = function (event) {
-      letter = (String.fromCharCode(event.keyCode));
+      letter = (String.fromCharCode(event.keyCode).toUpperCase());
+      console.log (letter);
       document.getElementById(letter).src = 'assets/images/Alphabet/' + [letter] + 'b.png';
       if (guesses.indexOf(letter) > -1) {
         alert("See the big X over the letter? That means you can't do it again.");
